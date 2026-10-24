@@ -1,48 +1,68 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Update the copyright year
+
+    // 1. Update copyright year automatically
     const currentYear = document.getElementById("currentYear");
 
     if (currentYear) {
         currentYear.textContent = new Date().getFullYear();
     }
 
-    // Mobile menu toggle
+    // 2. Mobile menu
     const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.querySelector(".nav nav");
+    const navigation = document.getElementById("navigation");
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", function () {
-            const isOpen = navLinks.classList.toggle("open");
+    if (menuToggle && navigation) {
 
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
+        // Open and close menu
+        menuToggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const isOpen = navigation.classList.toggle("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
         });
 
         // Close menu after clicking a link
-        navLinks.querySelectorAll("a").forEach(function (link) {
+        navigation.querySelectorAll("a").forEach(function (link) {
             link.addEventListener("click", function () {
-                navLinks.classList.remove("open");
+                navigation.classList.remove("open");
+
                 menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation");
             });
         });
 
         // Close menu when clicking outside
         document.addEventListener("click", function (event) {
             if (
-                !menuToggle.contains(event.target) &&
-                !navLinks.contains(event.target)
+                !navigation.contains(event.target) &&
+                !menuToggle.contains(event.target)
             ) {
-                navLinks.classList.remove("open");
+                navigation.classList.remove("open");
+
                 menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation");
             }
         });
 
-        // Close menu with Escape
+        // Close menu when pressing Escape
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
-                navLinks.classList.remove("open");
+                navigation.classList.remove("open");
+
                 menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation");
             }
         });
     }
+
 });
