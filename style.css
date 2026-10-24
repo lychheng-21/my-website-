@@ -640,105 +640,125 @@ nav .nav-contact:hover {
   }
 }
 
+
 /* CONTACT SECTION */
-#contact {
-  display: block;
-  visibility: visible;
-  scroll-margin-top: 90px;
+.contact-section {
+    background: #f3f9fe;
+    padding: 100px 0;
+    color: #174a78;
 }
 
-#contact .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+.contact-section .container {
+    width: 90%;
+    max-width: 1550px;
+    margin: 0 auto;
 }
 
-#contact .phone-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
-@media (max-width: 650px) {
-  #contact .contact-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+.contact-section .eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #3498db;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 3px;
 }
 
-/* SMALL PHONES */
-
-@media (max-width: 480px) {
-  .brand {
-    gap: 8px;
-  }
-
-  .brand-logo {
-    width: 55px;
-    height: 45px;
-  }
-
-  .brand-text strong {
-    font-size: 14px;
-  }
-
-  .brand-text small {
-    font-size: 10px;
+.contact-section h2 {
+    margin: 0 0 20px;
+    color: #174a78;
+    font-size: 44px;
     line-height: 1.6;
-  }
+    font-weight: 800;
+}
 
-  .hero-text h1 {
-    font-size: 20px;
-    line-height: 1.8;
-    letter-spacing: 0;
-    word-spacing: 0;
-  }
-
-  .khmer-description {
-    font-size: 14px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .hero-buttons .button {
-    width: 100%;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-heading .eyebrow {
+.contact-section p {
+    margin: 0;
+    color: #46627d;
     font-size: 18px;
-    line-height: 1.9;
-  }
+    line-height: 2;
+}
 
-  .signboard {
-    padding: 16px;
-  }
-
-  .signboard-image {
-    height: 200px;
-  }
-
-  .signboard h2 {
-    font-size: 19px;
-  }
-
-  .phone-list a {
-    flex-wrap: wrap;
-  }
-
-  .phone-list strong {
-    font-size: 15px;
-  }
-
-  .footer-content {
+.phone-list {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-  }
-  
+    gap: 16px;
+}
+
+.phone-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 84px;
+    padding: 20px 26px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #c9e3f8;
+    border-radius: 12px;
+    color: #174a78;
+    text-decoration: none;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.phone-list a:hover {
+    border-color: #3498db;
+    transform: translateY(-2px);
+}
+
+.phone-list a span {
+    color: #46627d;
+    font-size: 16px;
+}
+
+.phone-list a strong {
+    color: #174a78;
+    font-size: 20px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* TABLET AND MOBILE */
+@media (max-width: 650px) {
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .contact-section h2 {
+        font-size: 30px;
+        line-height: 1.7;
+    }
+
+    .contact-section p {
+        font-size: 16px;
+    }
+
+    .phone-list a {
+        min-height: 76px;
+        padding: 16px;
+    }
+
+    .phone-list a span {
+        font-size: 14px;
+    }
+
+    .phone-list a strong {
+        font-size: 16px;
+    }
+}
+
 /* Product images */
 
 .product-image {
