@@ -9,31 +9,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Mobile menu toggle
     const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.querySelector(".nav-links");
+    const navLinks = document.querySelector(".nav nav");
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
+            const isOpen = navLinks.classList.toggle("open");
 
-            const isOpen = navLinks.classList.contains("active");
             menuToggle.setAttribute("aria-expanded", String(isOpen));
         });
 
-        // Close the menu after clicking a navigation link
+        // Close menu after clicking a link
         navLinks.querySelectorAll("a").forEach(function (link) {
             link.addEventListener("click", function () {
-                navLinks.classList.remove("active");
+                navLinks.classList.remove("open");
                 menuToggle.setAttribute("aria-expanded", "false");
             });
         });
 
-        // Close the menu when clicking outside it
+        // Close menu when clicking outside
         document.addEventListener("click", function (event) {
             if (
                 !menuToggle.contains(event.target) &&
                 !navLinks.contains(event.target)
             ) {
-                navLinks.classList.remove("active");
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        // Close menu with Escape
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                navLinks.classList.remove("open");
                 menuToggle.setAttribute("aria-expanded", "false");
             }
         });
