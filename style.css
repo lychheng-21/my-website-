@@ -580,54 +580,88 @@ nav .nav-contact:hover {
         text-align: center;
     }
 }
+/* FIX MOBILE NAVIGATION AND CONTACT BUTTON */
 
+@media (max-width: 900px) {
+  .nav-links {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    max-width: 85%;
+    height: 100vh;
+    height: 100dvh;
+    padding: 100px 24px 30px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #ffffff;
+    box-shadow: 5px 0 25px rgba(23, 74, 120, 0.15);
+    z-index: 2001;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease, visibility 0.3s ease;
+  }
 
-/* MOBILE */
+  .nav-links.active {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px 14px;
+    color: #174A78 !important;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #d8e7f0;
+  }
+
+  .nav-links a.nav-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    padding: 18px 14px;
+    background: #174A78;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+/* CONTACT SECTION */
+#contact {
+  display: block;
+  visibility: visible;
+  scroll-margin-top: 90px;
+}
+
+#contact .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+#contact .phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
 @media (max-width: 650px) {
-  .container {
-    width: 90%;
-  }
-
-  .hero-grid,
-  .about-grid,
-  .contact-grid {
+  #contact .contact-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 30px;
-  }
-
-  .hero-text h1 {
-    font-size: 24px;
-    line-height: 1.8;
-  }
-
-  .hero-buttons {
-    flex-direction: row;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .highlight-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-
-  .section-heading .eyebrow {
-    font-size: 20px;
-  }
-
-  .signboard {
-    min-height: 250px;
-  }
-
-  .signboard-image {
-    height: 260px;
   }
 }
 
