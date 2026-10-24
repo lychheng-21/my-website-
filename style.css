@@ -518,61 +518,69 @@ nav .nav-contact:hover {
 
 /* TABLETS */
 
+
+/* LEFT-SIDE MOBILE MENU */
 @media (max-width: 900px) {
-  .nav {
-    min-height: 78px;
-  }
+    .nav {
+        position: relative;
+        min-height: 78px;
+    }
 
-  .menu-toggle {
-    display: block;
-    flex-shrink: 0;
-  }
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 2002;
+        flex-shrink: 0;
+    }
 
-  nav {
-    display: none;
-    position: absolute;
-    top: 78px;
-    left: 0;
-    right: 0;
-    padding: 22px 5%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 18px;
-    background: var(--white);
-    border-bottom: 2px solid var(--border);
-    box-shadow: 0 12px 20px rgba(23, 74, 120, 0.08);
-  }
+    .nav nav,
+    .nav > nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: auto;
+        width: 280px;
+        max-width: 85%;
+        height: 100vh;
+        height: 100dvh;
+        padding: 100px 24px 30px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #ffffff;
+        box-shadow: 5px 0 25px rgba(23, 74, 120, 0.15);
+        z-index: 2001;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.3s ease, visibility 0.3s ease;
+    }
 
-  nav.open {
-    display: flex;
-  }
+    .nav nav.open,
+    .nav > nav.open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
 
-  .hero {
-    padding: 55px 0;
-  }
+    .nav nav a,
+    .nav > nav a {
+        display: block;
+        padding: 16px 10px;
+        border-bottom: 1px solid #CDE8FA;
+        color: #174A78;
+        font-size: 16px;
+    }
 
-  .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-    gap: 25px;
-  }
-
-  .hero-text h1 {
-    font-size: 24px;
-  }
-
-  .signboard {
-    padding: 18px;
-  }
-
-  .signboard-image {
-    height: 220px;
-  }
-
-  .about-grid,
-  .contact-grid {
-    gap: 35px;
-  }
+    .nav nav .nav-contact,
+    .nav > nav .nav-contact {
+        margin-top: 12px;
+        text-align: center;
+    }
 }
+
 
 /* MOBILE */
 
