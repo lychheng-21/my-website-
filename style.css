@@ -1,0 +1,806 @@
+
+/* ==========================================
+   DEPO CHHAY SRUN III
+   White + Cool Blue Theme
+========================================== */
+
+:root {
+  --blue: #174A78;
+  --light-blue: #65BDF3;
+  --pale-blue: #EAF6FF;
+  --dark-blue: #103858;
+  --dark: #263746;
+  --muted: #526779;
+  --white: #FFFFFF;
+  --border: #CDE8FA;
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, "Khmer OS System", "Noto Sans Khmer", sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--white);
+  border-bottom: 2px solid var(--pale-blue);
+  box-shadow: 0 3px 15px rgba(23, 74, 120, 0.05);
+}
+
+.nav {
+  min-height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  min-width: 0;
+}
+
+.brand-text strong {
+  display: block;
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.brand-text small {
+  display: block;
+  color: #368FCB;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  color: #368FCB;
+  font-size: 15px;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+nav .nav-contact {
+  padding: 12px 22px;
+  border-radius: 9px;
+  background: var(--blue);
+  color: var(--white);
+}
+
+nav .nav-contact:hover {
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  width: 100%;
+  padding: 75px 0;
+  background: linear-gradient(120deg, #FFFFFF 30%, #EAF6FF 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  min-width: 0;
+  width: 100%;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #368FCB;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.hero-text h1 {
+  margin-bottom: 22px;
+  color: var(--blue);
+  font-family: "Khmer OS System", "Noto Sans Khmer", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 0;
+  word-spacing: 0;
+  overflow-wrap: break-word;
+}
+
+.khmer-description {
+  max-width: 560px;
+  color: var(--muted);
+  font-family: "Khmer OS System", "Noto Sans Khmer", sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.hero-note {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0 20px;
+}
+
+.button {
+  min-height: 48px;
+  padding: 12px 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.button-primary {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.button-primary:hover {
+  background: var(--dark-blue);
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  background: var(--white);
+  color: var(--blue);
+  border-color: var(--light-blue);
+}
+
+.button-outline:hover {
+  background: var(--pale-blue);
+}
+
+/* SIGNBOARD */
+
+.signboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  min-height: 330px;
+  padding: 25px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(23, 74, 120, 0.09);
+  text-align: center;
+}
+
+.signboard-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  margin: 0 auto 10px;
+}
+
+.signboard-logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.signboard h2 {
+  color: var(--blue);
+  font-family: "Khmer OS System", "Noto Sans Khmer", sans-serif;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.signboard p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* HIGHLIGHTS */
+
+.highlights {
+  padding: 28px 0;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.highlight-grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.highlight-grid strong {
+  font-size: 17px;
+  color: var(--white);
+}
+
+.highlight-grid span {
+  color: #EAF6FF;
+  font-size: 13px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+/* Khmer subtitle in the Products section */
+.section-heading .eyebrow {
+  font-family: "Khmer OS System", "Noto Sans Khmer", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.9;
+  color: #368FCB;
+}
+
+.section-heading h2,
+.about-grid h2,
+.contact-grid h2 {
+  margin-bottom: 15px;
+  color: var(--blue);
+  font-size: clamp(29px, 4vw, 40px);
+  line-height: 1.6;
+}
+
+.section-heading p,
+.about-grid p,
+.contact-grid > div > p {
+  color: var(--muted);
+}
+
+/* PRODUCT CARDS */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  min-width: 0;
+  padding: 30px 25px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  box-shadow: 0 8px 24px rgba(23, 74, 120, 0.05);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(23, 74, 120, 0.12);
+}
+
+.product-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--pale-blue);
+  color: var(--blue);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.product-card h3 {
+  margin-bottom: 10px;
+  color: var(--blue);
+  font-size: 20px;
+}
+
+.product-card p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.product-link {
+  color: #368FCB;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.product-link:hover {
+  color: var(--dark-blue);
+}
+
+.product-note {
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ABOUT */
+
+.about-section {
+  background: var(--pale-blue);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 60px;
+}
+
+.about-grid p {
+  margin-bottom: 18px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  padding: 80px 0;
+  background: #F5FAFF;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: 60px;
+}
+
+.phone-list {
+  display: grid;
+  gap: 13px;
+}
+
+.phone-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  transition: 0.2s;
+}
+
+.phone-list a:hover {
+  border-color: var(--light-blue);
+  transform: translateX(3px);
+}
+
+.phone-list span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.phone-list strong {
+  color: var(--blue);
+  font-size: 17px;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 26px 0;
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-content strong {
+  color: var(--white);
+}
+
+.footer-content p {
+  color: #D8EBFA;
+  font-size: 12px;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+  .nav {
+    min-height: 78px;
+  }
+
+  .menu-toggle {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    padding: 22px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 12px 20px rgba(23, 74, 120, 0.08);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero {
+    padding: 55px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 25px;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+  }
+
+  .signboard {
+    padding: 18px;
+  }
+
+  .signboard-image {
+    height: 220px;
+  }
+
+  .about-grid,
+  .contact-grid {
+    gap: 35px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .container {
+    width: 90%;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .highlight-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-heading .eyebrow {
+    font-size: 20px;
+  }
+
+  .signboard {
+    min-height: 250px;
+  }
+
+  .signboard-image {
+    height: 260px;
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 55px;
+    height: 45px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .brand-text small {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .hero-text h1 {
+    font-size: 20px;
+    line-height: 1.8;
+    letter-spacing: 0;
+    word-spacing: 0;
+  }
+
+  .khmer-description {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .button {
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading .eyebrow {
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .signboard {
+    padding: 16px;
+  }
+
+  .signboard-image {
+    height: 200px;
+  }
+
+  .signboard h2 {
+    font-size: 19px;
+  }
+
+  .phone-list a {
+    flex-wrap: wrap;
+  }
+
+  .phone-list strong {
+    font-size: 15px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+/* Product images */
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+/* Product images */
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+/* LOCATION & GOOGLE MAPS */
+
+/* LOCATION SECTION - MATCH CONTACT SECTION */
+
+.location-section {
+  padding: 80px 0;
+  background: #F5FAFF;
+  border-top: 1px solid #CDE8FA;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.location-text h2 {
+  margin: 15px 0;
+  color: #174A78;
+  font-family: "Khmer OS System", "Noto Sans Khmer", sans-serif;
+  font-size: clamp(29px, 4vw, 40px);
+  line-height: 1.5;
+}
+
+.location-text p {
+  color: #526779;
+  font-family: "Khmer OS System", "Noto Sans Khmer", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.location-action {
+  display: grid;
+  gap: 13px;
+}
+
+.location-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px;
+  background: #FFFFFF;
+  border: 1px solid #CDE8FA;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.location-link:hover {
+  border-color: #65BDF3;
+  transform: translateY(-3px);
+}
+
+.location-link span {
+  color: #526779;
+  font-size: 14px;
+}
+
+.location-link strong {
+  color: #174A78;
+  font-size: 17px;
+}
+
+@media (max-width: 800px) {
+  .location-section {
+    padding: 60px 0;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-text h2 {
+    font-size: 27px;
+  }
+
+  .location-link {
+    padding: 20px;
+  }
+}
+
+}
